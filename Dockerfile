@@ -1,7 +1,7 @@
 FROM ubuntu:latest AS build
 
 RUN apt-get update && apt-get install -y build-essential
-COPY nist/Rel_5.0.0 /src
+COPY nist/ /src
 RUN mkdir /opt/nist
 WORKDIR /src
 RUN ./setup.sh /opt/nist --STDLIBS --without-X11 --64
